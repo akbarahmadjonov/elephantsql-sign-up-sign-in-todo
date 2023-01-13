@@ -1,0 +1,48 @@
+/user/register:
+    post:
+      tags:
+        - User
+      summary: User sign-up
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            type: object
+            properties:
+              user_name:
+                type: string
+              phone:
+                type: string
+              email:
+                type: string
+              password:
+                type: string
+      responses: 
+        200: 
+          description: The new user
+
+/user/login:
+    post:
+      tags:
+        - User
+      summary: User sign-in
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: The user to sign-in.
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+      responses: 
+        200: 
+          description: User login
+
